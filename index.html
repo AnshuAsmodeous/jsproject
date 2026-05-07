@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom — Daily Tracker</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+     <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-brand">Bloom</div>
+    <div class="nav-tagline">Your daily rituals</div>
+
+    <button class="nav-item active" onclick="showPage('water', this)">
+      <span class="nav-icon">💧</span> Water Intake
+    </button>
+    <button class="nav-item" onclick="showPage('habits', this)">
+      <span class="nav-icon">✅</span> Habit Tracker
+    </button>
+    <button class="nav-item" onclick="showPage('buckle', this)">
+      <span class="nav-icon">⚡</span> Buckle Up
+    </button>
+
+    <div class="nav-footer">made with love 🌸</div>
+    <!-- ADD THIS NAV BUTTON inside <nav>, after the buckle up button -->
+<!-- COPY THIS AND PASTE IT AFTER THE BUCKLE UP NAV BUTTON in index.html -->
+ 
+<button class="nav-item" onclick="showPage('about', this)">
+  <span class="nav-icon">🌸</span> About Us
+</button>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- WATER PAGE -->
+    <div class="page active" id="page-water">
+      <div class="page-title">Water Intake</div>
+      <div class="page-subtitle">Stay hydrated — 8 glasses a day keeps the doctor away</div>
+
+      <div class="week-tabs" id="week-tabs"></div>
+
+      <div class="water-section-label">Today's Glasses</div>
+      <div class="glasses-grid" id="glasses-grid"></div>
+
+      <div class="water-summary">
+        <div class="water-count" id="water-count">0 <span>/ 8 glasses</span></div>
+        <div class="water-msg" id="water-msg">Click a glass to log your water!</div>
+      </div>
+
+      <div class="week-overview">
+        <div class="water-section-label" style="margin-top:1.5rem">This Week</div>
+        <div class="week-bars" id="week-bars"></div>
+      </div>
+    </div>
+
+    <!-- HABITS PAGE -->
+    <div class="page" id="page-habits">
+      <div class="habit-header-row">
+        <div>
+          <div class="page-title">Habit Tracker</div>
+          <div class="page-subtitle">Build the life you want, one habit at a time</div>
+        </div>
+        <button class="add-habit-btn" onclick="openModal()">+ New Habit</button>
+      </div>
+
+      <div class="progress-overview">
+        <div class="prog-ring-wrap">
+          <svg width="64" height="64" viewBox="0 0 64 64">
+            <circle fill="none" stroke="#E9AFA366" stroke-width="6" cx="32" cy="32" r="26" />
+            <circle id="prog-ring" fill="none" stroke="#EA526F" stroke-width="6" cx="32" cy="32" r="26"
+              stroke-dasharray="163.4" stroke-dashoffset="163.4" stroke-linecap="round" transform="rotate(-90 32 32)"
+              style="transition:stroke-dashoffset 0.5s ease" />
+          </svg>
+          <div class="prog-pct" id="prog-pct">0%</div>
+        </div>
+        <div class="prog-info" style="flex:1">
+          <h3 id="prog-title">Start checking off!</h3>
+          <p id="prog-sub">Complete habits to see your progress</p>
+          <div class="prog-bar">
+            <div class="prog-bar-fill" id="prog-bar" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="habits-list" id="habits-list"></div>
+    </div>
+
+    <!-- BUCKLE UP PAGE -->
+    <div class="page" id="page-buckle">
+      <div class="page-title">Buckle Up ⚡</div>
+      <div class="page-subtitle">Scroll through and let something hit different today</div>
+      <div class="quotes-scroll" id="quotes-container"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ADD THIS PAGE inside <main>, after the buckle up page div -->
+<!-- COPY THIS AND PASTE IT AFTER <div class="page" id="page-buckle"> ... </div> -->
+ 
+<div class="page" id="page-about">
+  <div class="page-title">About Us</div>
+  <div class="page-subtitle">The people behind Bloom 🌸</div>
+ 
+  <div class="about-cards">
+ 
+    <!-- PROFESSOR CARD -->
+    <div class="about-card">
+      <div class="about-avatar-wrap">
+        <img src="abhisheksir.png" alt="Dr. Abhishek Thakur" class="about-avatar" />
+      </div>
+      <div class="about-info">
+        <div class="about-role-tag">Under Guidance Of</div>
+        <div class="about-name">Dr. Abhishek Thakur</div>
+        <div class="about-title">Associate Professor, Chitkara University, India</div>
+        <a href="https://www.linkedin.com/in/dr-abhishek-thakur-00123321/" target="_blank" class="about-linkedin">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn Profile
+        </a>
+        <div class="about-short">Associate Professor | AI & Machine Learning | Multimedia Forensics | Researcher | Author</div>
+        <div class="about-readmore-wrap" id="rm-prof">
+          <div class="about-full" id="full-prof">
+            <p>I am an Associate Professor in Computer Science Engineering at Chitkara University. I teach Artificial Intelligence and Machine Learning. I am a Visiting Professor at UPAEP in Mexico during the Global Summer School program.</p>
+            <p>I have over 15 years of experience in both academia and industry — connecting advanced research with practical tech solutions. My work focuses on smart systems for digital forensics, healthcare imaging, and connected technologies.</p>
+            <div class="about-interest-title">Research Interests</div>
+            <ul class="about-list">
+              <li>Image and video forgery detection</li>
+              <li>Deep learning for multimedia forensics</li>
+              <li>Biomedical image analysis</li>
+              <li>Advanced machine learning techniques</li>
+              <li>Cloud-enabled IoT systems</li>
+            </ul>
+            <p>I earned my Ph.D. in Electronics and Communication Engineering from Thapar University, an MBA in Information Technology from Symbiosis International University, and hold M.Tech and B.E. in Electronics Engineering.</p>
+            <div class="about-badges">
+              <span>📘 Author of 4 academic books</span>
+              <span>📑 SCI & Scopus publications</span>
+              <span>💡 Patent holder</span>
+              <span>🎓 Research supervision & international collaborations</span>
+            </div>
+            <p>My mission is to spark innovation in education and applied AI research. Open to partnerships in AI, Computer Vision, Multimedia Forensics, and new technologies.</p>
+          </div>
+          <button class="readmore-btn" onclick="toggleReadMore('prof', this)">Read more ↓</button>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- DEVELOPER CARD -->
+    <div class="about-card">
+      <div class="about-avatar-wrap">
+        <img src="anshu.png" alt="Anshu Sharma" class="about-avatar" />
+      </div>
+       
+      <div class="about-info">
+        <div class="about-role-tag developer">Developer</div>
+        <div class="about-name">Anshu Sharma</div>
+        <div class="about-title">Student at Chitkara University, Himachal Pradesh</div>
+        <a href="https://www.linkedin.com/in/anshu-sharma-3970422b5?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="about-linkedin">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn Profile
+        </a>
+        <div class="about-short">B.Tech Computer Science · 9.86 SGPA · IEEE · NSS</div>
+        <div class="about-readmore-wrap" id="rm-dev">
+          <div class="about-full" id="full-dev">
+            <p>Anshu is a first-year B.Tech Computer Science student at Chitkara University (2025–2029), maintaining an impressive 9.86 SGPA.</p>
+            <div class="about-interest-title">Technical Portfolio</div>
+            <ul class="about-list">
+              <li>Languages: Python, JavaScript</li>
+              <li>Projects: Feature-rich Spotify UI clone</li>
+              <li>Top 4,000 globally at IEEEXtreme 19.0</li>
+            </ul>
+            <div class="about-badges">
+              <span>⚡ IEEE Student Branch volunteer & leader</span>
+              <span>🤝 NSS member</span>
+              <span>🏆 Buildathon Emergence '26 co-lead</span>
+            </div>
+            <p>Anshu combines rare technical depth with leadership instinct and a drive that is entirely self-built — she doesn't wait for opportunities, she engineers them.</p>
+          </div>
+          <button class="readmore-btn" onclick="toggleReadMore('dev', this)">Read more ↓</button>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+</div>
+
+
+
+
+  </main>
+
+  <!-- ADD HABIT MODAL -->
+  <div class="modal-bg" id="modal-bg">
+    <div class="modal">
+      <h3>New Habit 🌱</h3>
+      <label>Habit Name</label>
+      <input type="text" id="m-name" placeholder="e.g. Read 10 pages" maxlength="50" />
+      <label>How many days per week?</label>
+      <select id="m-days">
+        <option value="1">1 day / week</option>
+        <option value="2">2 days / week</option>
+        <option value="3">3 days / week</option>
+        <option value="4">4 days / week</option>
+        <option value="5">5 days / week</option>
+        <option value="6">6 days / week</option>
+        <option value="7" selected>Every day</option>
+      </select>
+      <label>Category</label>
+      <select id="m-cat">
+        <option value="health">🏃 Health</option>
+        <option value="mind">🧠 Mind</option>
+        <option value="social">💬 Social</option>
+        <option value="creative">🎨 Creative</option>
+        <option value="other">✨ Other</option>
+      </select>
+      <div class="modal-btns">
+        <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+        <button class="btn-save" onclick="saveHabit()">Save Habit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"> </script>
+</body>
+
+</html>
